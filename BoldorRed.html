@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Bold or Red? </title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <p id="BOLDNRED">
+        <strong boldnred="true">We</strong> have just started <strong boldnred="true">this</strong> section for the users (<strong boldnred="true">beginner</strong> to intermediate)
+        who want to work with <strong boldnred="true">various</strong> JavaScript <strong boldnred="true">problems</strong> and write scripts online to <strong boldnred="true">test</strong>
+        their JavaScript <strong boldnred="true">skill</strong>.
+    </p>
+
+    <script>
+        /*
+        wordItems = document.getElementsByTagName('strong');
+        wordItems = wordItems.slice;
+
+        Array.prototype.forEach.call(wordItems, function (wordItems, index, reff) {
+            if (elem[index].getAttribute == "true")
+                elem[index].setAttribute("onmouseover", function (obj) {
+                    if (obj.style.color == "red") {
+                        obj.style.color = "black";
+                    }
+                    else {
+                        obj.style.color = "red";
+                    }
+                })
+        });*/
+
+        var boldWords = document.getElementsByTagName("strong");   // variable 'boldWords' created for all words with <strong> tags
+        /* Scenario 1:
+         Change an individual bold word to red color text when it is moused over and
+         returned to black color text when it is moused out. */
+        for (var i = 0; i < boldWords.length; i++) {
+            boldWords[i].addEventListener("mouseover", function () // addEventListener 'mouseover' for the chosen individual bold word
+            {
+                this.style.color = "red";                    // the individual bold word gets its text color changed to red
+            });
+            boldWords[i].addEventListener("mouseout", function ()  // addEventListener 'mouseout' for the chosen individual bold word
+            {
+                this.style.color = "black";                      // the individual bold word gets its text color returned to black
+            });
+        };
+    </script>
+
+</body>
+</html>
